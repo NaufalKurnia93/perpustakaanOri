@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 30, 2024 at 09:57 AM
+-- Generation Time: Dec 08, 2024 at 02:09 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -39,8 +39,7 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id_anggota`, `nama_anggota`, `alamat`, `no_telpon`) VALUES
-(12, 'MUHAMMAD ADI SAPUTRA', 'KAITI', 23232323),
-(13, 'ZAKI ARDIAN ABROR', 'LUBAH HULU', 2147483647),
+(13, 'ZAKI ARDIAN ABRORa', 'LUBAH HULU', 2147483647),
 (14, 'YOZA ANDIKA PUTRA', 'SIMP KHALID BIN WALID', 2323),
 (15, 'YUDI KURNIAWAN', 'PESAGANG', 232123),
 (16, 'MUHAMMAD FEBRIAN', 'JAWA', 1322),
@@ -56,7 +55,8 @@ INSERT INTO `anggota` (`id_anggota`, `nama_anggota`, `alamat`, `no_telpon`) VALU
 (26, 'SUPRIADI', 'NOGORI', 23343223),
 (27, 'DWI INDRIAYANI', 'SOSA', 234334),
 (28, 'PAJRI WIJAYA', 'SUNGAI PINANG', 2342323),
-(29, 'pak pauziii', 'kampar', 123);
+(29, 'pak pauziii', 'kampar', 123),
+(30, 'naura kurnia', 'jalan pendidikan ', 234424);
 
 -- --------------------------------------------------------
 
@@ -134,8 +134,8 @@ INSERT INTO `peminjaman` (`id_peminjaman`, `id_anggota`, `tanggal_pinjam`, `tang
 ('PJM002', '5', '2024-11-07', '2024-11-13', '10', 'selesai'),
 ('PJM003', '12', '2024-11-07', '2024-11-08', '10', 'berlangsung'),
 ('PJM004', '22', '2024-11-07', '2024-11-08', '12', 'berlangsung'),
-('PJM005', '13', '2024-11-07', '2024-11-21', '8', 'berlangsung'),
-('PJM006', '16', '2024-11-07', '2024-11-25', '11', 'berlangsung'),
+('PJM005', '13', '2024-11-07', '2024-11-21', '8', 'selesai'),
+('PJM006', '16', '2024-11-07', '2024-11-25', '11', 'selesai'),
 ('PJM007', '22', '2024-11-07', '2024-11-20', '12', 'berlangsung'),
 ('PJM008', '21', '2024-11-07', '2024-11-06', '8', 'berlangsung'),
 ('PJM009', '20', '2024-11-07', '2024-11-22', '12', 'berlangsung'),
@@ -165,7 +165,9 @@ INSERT INTO `peminjaman` (`id_peminjaman`, `id_anggota`, `tanggal_pinjam`, `tang
 ('PJM033', '22', '2024-11-07', '2024-11-06', '8', 'berlangsung'),
 ('PJM034', '23', '2024-11-07', '2024-11-16', '8', 'berlangsung'),
 ('PJM035', '25', '2024-11-07', '2024-11-05', '8', 'berlangsung'),
-('PJM036', '25', '2024-11-07', '2024-11-16', '', 'berlangsung');
+('PJM036', '25', '2024-11-07', '2024-11-16', '', 'berlangsung'),
+('PJM037', '20', '2024-11-18', '2024-01-01', '8', 'selesai'),
+('PJM038', '30', '2024-12-07', '2024-12-10', '8', 'selesai');
 
 -- --------------------------------------------------------
 
@@ -186,7 +188,9 @@ CREATE TABLE `peminjaman_detail` (
 --
 
 INSERT INTO `peminjaman_detail` (`id_peminjaman_detail`, `id_peminjaman`, `id_buku`, `denda`, `status`) VALUES
-(0, 'PJM003', 'BOk_005', 0, 'Belum Dikonfirmasi');
+(1, 'PJM003', 'BOk_005', 0, 'Belum Dikonfirmasi'),
+(7, 'PJM008', 'BOk_004', 1000, 'Dikonfirmasi'),
+(8, 'PJM008', 'BOk_005', 1000, 'Dikonfirmasi');
 
 -- --------------------------------------------------------
 
@@ -260,7 +264,8 @@ INSERT INTO `users` (`id`, `nama`, `username`, `email`, `no_telp`, `password`, `
 (27, 'juan', 'go', 'go@gmail.com', 221, '$2y$10$fIPoPCcRoGz4aFX.Cyo/Qe.ceXlm.h4lWbh.OO34sXpa4MImsP57u', 'admin'),
 (28, 'naufal kurnia', 'root', 'noufalkurnia1@gmail.com', 2147483647, '$2y$10$vWU07A3EEvMPz7a0ISc00.W1RxfHCrf6srISbEMJnZMxT59REh.ue', 'super_admin'),
 (29, 'naufal', 'naufal', 'a@gmail.com', 123, '$2y$10$dFaz17mKuWu8EcRalTwePOqejiGG6JWQ2CG2s3yMaXzUWcQd7/O3W', 'super_admin'),
-(31, 'JULIAA', 'juli', 'nou0@gmail.com', 99999, '$2y$10$WesYqqo7GV8/PgZJYa0.QeEo1xP.cZz/R/.LuCesvo5V/P3dx/p8e', 'super_admin');
+(31, 'JULIAA', 'juli', 'nou0@gmail.com', 99999, '$2y$10$WesYqqo7GV8/PgZJYa0.QeEo1xP.cZz/R/.LuCesvo5V/P3dx/p8e', 'super_admin'),
+(34, 'naura kurnia', 'naura', 'nora@gmail.com', 999, '$2y$10$Bg4i4INBiBTB5nSeHWlF/.ZEZf/XoYoVeXt88sW/J2A1D.m8Zz4Pq', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -323,13 +328,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_anggota` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_anggota` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `peminjaman_detail`
+--
+ALTER TABLE `peminjaman_detail`
+  MODIFY `id_peminjaman_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `penulis`
@@ -347,7 +358,7 @@ ALTER TABLE `petugas`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
