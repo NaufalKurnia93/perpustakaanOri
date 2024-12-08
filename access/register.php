@@ -50,7 +50,7 @@ if (isset($_POST["buat"])) {
                             text: 'Anda telah berhasil terdaftar. Silakan login.'
                             }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location.href = 'index.php?auth=login.php';
+                                window.location.href = 'index.php?access=login.php';
                             }
                             });";
 						break;
